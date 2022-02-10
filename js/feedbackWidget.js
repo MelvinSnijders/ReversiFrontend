@@ -23,11 +23,24 @@ class FeedbackWidget {
                 break;
         }
 
+        this.log({message, type});
+
     }
 
     hide() {
         let div = $(`#${this.elementId}`);
         div.css("display", div.css("display") === "block" ? "none" : "block" );
+    }
+
+    log(message) {
+        let logArray = JSON.parse(localStorage.feedback_widget) ?? [];
+        if(logArray.length >= 10) logArray.pop();
+        logArray.unshift(message);
+        localStorage.feedback_widget = JSON.stringify(logArray);
+    }
+
+    removeLog() {
+        localStorage.removeItem("feedback_widget");
     }
 
 }
