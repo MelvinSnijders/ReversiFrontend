@@ -5,15 +5,15 @@ class FeedbackWidget {
     }
 
     get elementId() {
-        //getter, set keyword voor setter methode
         return this._elementId;
     }
 
     show(message, type) {
-        var x = document.getElementById(this.elementId);
-        x.style.display = x.style.display === "none" ? "block" : "none";
-        var div = $(`#${this.elementId}`);
+
+        let div = $(`#${this.elementId}`);
+        div.css("display", div.css("display") === "none" ? "block" : "none" );
         div.text(message);
+
         switch (type) {
             case "success":
                 div.addClass("alert-success")
@@ -22,11 +22,12 @@ class FeedbackWidget {
                 div.addClass("alert-danger")
                 break;
         }
+
     }
 
     hide() {
-        var x = document.getElementById(this.elementId);
-        x.style.display = x.style.display === "block" ? "none" : "block";
+        let div = $(`#${this.elementId}`);
+        div.css("display", div.css("display") === "block" ? "none" : "block" );
     }
 
 }
