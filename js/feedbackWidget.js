@@ -8,10 +8,10 @@ class FeedbackWidget {
         return this._elementId;
     }
 
-    show(message, type) {
+    show(message, type, skipLog) {
 
         let div = $(`#${this.elementId}`);
-        div.css("display", div.css("display") === "none" ? "block" : "none" );
+        div.css("display", div.css("display") === "none" && "block");
         div.text(message);
 
         switch (type) {
@@ -23,17 +23,17 @@ class FeedbackWidget {
                 break;
         }
 
-        this.log({message, type});
+        if(!skipLog) this.log({message, type});
 
     }
 
     hide() {
         let div = $(`#${this.elementId}`);
-        div.css("display", div.css("display") === "block" ? "none" : "block" );
+        div.css("display", div.css("display") === "block" && "none");
     }
 
     log(message) {
-        let logArray = JSON.parse(localStorage.feedback_widget) ?? [];
+        let logArray = JSON.parse(localStorage.feedback_widget ?? "[]");
         if(logArray.length >= 10) logArray.pop();
         logArray.unshift(message);
         localStorage.feedback_widget = JSON.stringify(logArray);
@@ -41,6 +41,13 @@ class FeedbackWidget {
 
     removeLog() {
         localStorage.removeItem("feedback_widget");
+    }
+
+    history() {
+        const logArray = JSON.parse(localStorage.feedback_widget ?? "[]");
+        // <type |success|error|>  -  <berichttekst> <\n>
+        const formatted = logArray.map(d => `${d.type} - ${d.message}`).join("\n");
+        this.show(formatted, "success", true);
     }
 
 }
