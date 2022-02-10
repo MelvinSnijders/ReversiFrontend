@@ -10,6 +10,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script type="text/javascript" src="../js/feedbackWidget.js"></script>
+    <script type="text/javascript" src="../js/game.js"></script>
 
 </head>
 <body>
@@ -45,6 +46,15 @@
             expect($(`#${widgetSelector}`).attr('style')).toBe("display: none;");
         })
     });
+
+    describe("Game", function () {
+        it("Is available in global scope", function () {
+            expect(Game).toBeDefined();
+        })
+        it("Has init method", function() {
+            expect(Game.init).toBeDefined();
+        })
+    })
 
     // describe("A suite", function () {
     //     it("contains spec with an expectation", function () {

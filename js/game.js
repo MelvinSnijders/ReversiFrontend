@@ -3,11 +3,11 @@ const apiUrl = 'url/super/duper/game'
 const Game = (function (url) {
 
     let configMap = {
-      api: url
+      apiUrl: url
     };
     // Private function init
     const privateInit = function(){
-        console.log('Private information!');
+        console.log(configMap.apiUrl);
     }
 
     // Waarde/object geretourneerd aan de outer scope
