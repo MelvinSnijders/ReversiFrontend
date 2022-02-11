@@ -11,6 +11,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script type="text/javascript" src="../js/feedbackWidget.js"></script>
     <script type="text/javascript" src="../js/game.js"></script>
+    <script src="../js/modules/reversi.js"></script>
+    <script src="../js/modules/data.js"></script>
+    <script src="../js/modules/model.js"></script>
 
 </head>
 <body>
@@ -53,6 +56,18 @@
         })
         it("Has init method", function() {
             expect(Game.init).toBeDefined();
+        })
+    })
+
+    describe("Model", function () {
+        it("Has init method", function() {
+            expect(Game.Model.init).toBeDefined();
+        })
+    })
+
+    describe("Data", function () {
+        it("Has init method", function() {
+            expect(Game.Data.init).toBeDefined();
         })
     })
 
