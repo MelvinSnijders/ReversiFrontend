@@ -53,6 +53,12 @@
             successWidget.show("Je hebt op de knop gedrukt", "success");
         });
 
+        function afterInit() {
+            console.log('Game init voltooid')
+        }
+
+        Game.init(afterInit);
+
     });
 </script>
 
