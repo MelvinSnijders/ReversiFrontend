@@ -1,10 +1,13 @@
 module.exports = {
-    localServerProjectPath : '<C:/...pad_naar_server_project_voor_client_bestanden>',
+    localServerProjectPath : 'C:\\Users\\Melvin Snijders\\Documents\\School\\Jaar 2\\Semester 2\\Reversi\\ReversiGame\\ReversiRestApi\\wwwroot',
     files: {
         js: [
             'js/**/*.js',
             'js/*.js'
+        ],
+        jsOrder: [
+
         ]
     },
-    voornaam: '<jouw naam>'
+    voornaam: 'Melvin'
 };

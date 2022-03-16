@@ -5,9 +5,18 @@ const Game = (function (url) {
     let configMap = {
       apiUrl: url
     };
-    // Private function init
+
+    let stateMap = {
+        gameState: 0
+    }
+
+    const _getCurrentGameState = function() {
+        Game.Model.getGameState().then(d => stateMap.gameState = d);
+    }
+
     const privateInit = function(afterInit){
         console.log(configMap.apiUrl);
+        setInterval(_getCurrentGameState, 2000);
         afterInit();
     }
 
