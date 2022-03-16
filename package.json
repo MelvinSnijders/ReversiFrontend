@@ -1,0 +1,22 @@
+{
+  "name": "reversi-frontend",
+  "version": "1.0.0",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MelvinSnijders/ReversiFrontend.git"
+  },
+  "author": "Melvin Snijders",
+  "bugs": {
+    "url": "https://github.com/MelvinSnijders/ReversiFrontend/issues"
+  },
+  "homepage": "https://github.com/MelvinSnijders/ReversiFrontend#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
