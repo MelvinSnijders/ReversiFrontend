@@ -7,7 +7,10 @@ module.exports = {
         ],
         jsOrder: [
 
-        ]
+        ],
+        sass: [
+            'css/*.scss',
+        ],  
     },
     voornaam: 'Melvin'
 };

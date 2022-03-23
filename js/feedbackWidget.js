@@ -31,15 +31,16 @@ class FeedbackWidget {
 
         let div = $(`#${this.elementId}`);
         div.css("display", div.css("display") === "none" && "block");
-        div.text(message);
+        let textblock = $(`#${this.elementId} .widget__text`);
+        textblock.text(message);
 
         switch (type) {
             case "success":
-                div.addClass("alert-success")
+                div.addClass("widget--state-success")
                 break;
             case "danger":
             default:
-                div.addClass("alert-danger")
+                div.addClass("widget--state-danger")
                 break;
         }
 

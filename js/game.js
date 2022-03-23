@@ -17,6 +17,7 @@ const Game = (function (url) {
     const privateInit = function(afterInit){
         console.log(configMap.apiUrl);
         setInterval(_getCurrentGameState, 2000);
+        Game.Reversi.init();
         afterInit();
     }
 
